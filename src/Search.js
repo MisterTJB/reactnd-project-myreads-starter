@@ -17,7 +17,6 @@ export default class Search extends React.Component {
   }
 
   render() {
-    console.log(this.state.results)
     return (<div className="search-books">
       <SearchBar updateResults={this.updateResults}/>
       <SearchResults results={this.state.results}/>
