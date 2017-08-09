@@ -13,7 +13,7 @@ export default class Book extends React.Component {
       <div className="book">
         <div className="book-top">
           <div className="book-cover" style={{ width: 128, height: 193, backgroundImage: `url("${book.imageLinks.thumbnail}")` }}></div>
-          <BookshelfChanger changeShelf={this.changeShelf} book={book}/>
+          <BookshelfChanger changeShelf={this.changeShelf} book={book} updateShelves={this.props.updateShelves}/>
         </div>
         <div className="book-title">{ book.title }</div>
         <div className="book-authors">{ book.authors }</div>

@@ -9,7 +9,7 @@ export default class Bookshelf extends React.Component {
     return (
     <div className="bookshelf">
       <h2 className="bookshelf-title">{ shelf }</h2>
-      <BooksGrid books={this.props.books} />
+      <BooksGrid books={this.props.books} updateShelves={this.props.updateShelves}/>
     </div>
   )
   }

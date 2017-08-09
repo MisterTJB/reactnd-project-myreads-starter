@@ -20,15 +20,25 @@ export default class BookshelfChanger extends React.Component {
     const shelf = event.target.value
 
     update(book, shelf).then( (res) => {
+      book.shelf = shelf
       this.setState({ shelf: shelf })
+
+      if (this.props.updateShelves){
+        this.props.updateShelves()
+      }
     })
 
   }
 
   componentDidMount(){
-    get(this.props.book.id).then( (book) => {
-      this.setState( { shelf: book.shelf })
-    })
+
+    if (this.props.book.shelf) {
+      this.setState( { shelf: this.props.book.shelf })
+    } else {
+      get(this.props.book.id).then( (book) => {
+        this.setState( { shelf: book.shelf })
+      })
+    }
   }
 
   render() {
