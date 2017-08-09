@@ -12,7 +12,6 @@ export default class Search extends React.Component {
   }
 
   updateResults(results){
-    console.log("Results changed")
     this.setState( { results })
   }
 
