@@ -12,7 +12,7 @@ export default class SearchBar extends React.Component {
 
   updateQuery(event) {
     this.setState({ value: event.target.value })
-    search(this.state.value, 25).then( (books) => {
+    search(this.state.value, 20).then( (books) => {
       this.props.updateResults(books)
     }).catch( () => this.props.updateResults([]))
   }
