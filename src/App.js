@@ -1,9 +1,11 @@
 import React from 'react'
+import { BrowserRouter, Route } from 'react-router-dom'
+
 import * as BooksAPI from './BooksAPI'
 import './App.css'
 
 import Search from './Search'
-import BooksList from './BooksList'
+import Main from './Main'
 
 class BooksApp extends React.Component {
   state = {
@@ -18,21 +20,12 @@ class BooksApp extends React.Component {
 
   render() {
     return (
-      <div className="app">
-        {this.state.showSearchPage ? (
-          <Search />
-        ) : (
-          <div className="list-books">
-            <div className="list-books-title">
-              <h1>MyReads</h1>
-            </div>
-            <BooksList />
-            <div className="open-search">
-              <a onClick={() => this.setState({ showSearchPage: true })}>Add a book</a>
-            </div>
-          </div>
-        )}
-      </div>
+      <BrowserRouter>
+        <div className="app">
+          <Route exact path="/add" component={ Search }/>
+          <Route exact path="/" component={ Main } />
+        </div>
+      </BrowserRouter>
     )
   }
 }
