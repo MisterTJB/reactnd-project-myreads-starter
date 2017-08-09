@@ -13,7 +13,7 @@ export default class Main extends React.Component {
         </div>
         <BooksList />
         <div className="open-search">
-          <Link to="/add">Add a book</Link>
+          <Link to="/search">Add a book</Link>
         </div>
       </div>
     )

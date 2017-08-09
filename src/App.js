@@ -22,7 +22,7 @@ class BooksApp extends React.Component {
     return (
       <BrowserRouter>
         <div className="app">
-          <Route exact path="/add" component={ Search }/>
+          <Route exact path="/search" component={ Search }/>
           <Route exact path="/" component={ Main } />
         </div>
       </BrowserRouter>
