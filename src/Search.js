@@ -15,10 +15,12 @@ export default class Search extends React.Component {
   }
 
   updateResults(results){
+    console.log("Results changed")
     this.setState( { results })
   }
 
   render() {
+    console.log(this.state.results)
     return (<div className="search-books">
       <SearchBar updateResults={this.updateResults}/>
       <SearchResults results={this.state.results}/>
